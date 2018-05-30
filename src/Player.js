@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Player = ({ className }) => (
   <ReactPlayer
-    url="https://www.youtube.com/watch?v=-X4ikwUwxoE"
+    url="https://www.youtube.com/watch?v=Dx-XMAJ1mwU"
     className={className}
     playing
     width="100%"

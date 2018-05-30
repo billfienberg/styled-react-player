@@ -3,10 +3,9 @@ import { render } from "react-dom";
 import Player from "./Player";
 
 const App = () => {
-  const playerProps = { playing: true };
   return (
     <div>
-      <Player {...playerProps} />
+      <Player />
     </div>
   );
 };
