@@ -1,34 +1,31 @@
-import React from "react";
-import ReactPlayer from "react-player";
-import styled from "styled-components";
+import React from 'react'
+import ReactPlayer from 'react-player'
+import styled from 'styled-components'
 
-const Player = ({ className }) => (
+const Player = (props = {}) => (
   <ReactPlayer
-    url="https://www.youtube.com/watch?v=Dx-XMAJ1mwU"
-    className={className}
-    playing
+    className={props.className}
     width="100%"
     height="100%"
-    controls={false}
-    muted
+    {...props}
   />
-);
+)
 
 const AbsolutelyPositionedPlayer = styled(Player)`
   position: absolute;
   top: 0;
   left: 0;
-`;
+`
 
 const RelativePositionWrapper = styled.div`
   position: relative;
   padding-top: 56.25%;
-`;
+`
 
-const ResponsiveStyledPlayer = () => (
+const ResponsiveStyledPlayer = (props = {}) => (
   <RelativePositionWrapper>
-    <AbsolutelyPositionedPlayer />
+    <AbsolutelyPositionedPlayer {...props} />
   </RelativePositionWrapper>
-);
+)
 
-export default ResponsiveStyledPlayer;
+export default ResponsiveStyledPlayer
