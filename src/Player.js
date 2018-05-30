@@ -28,15 +28,21 @@ const Overlay = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
+  display: flex;
+  flex-direction: ${props => props.flexDirection || 'column'};
+  justify-content: ${props => props.justifyContent || 'center'};
+  align-items: ${props => props.alignItems || 'center'};
   background: ${props => props.overlayColor};
   opacity: ${props => props.opacity};
 `
 
-const ResponsiveStyledPlayer = (props = {}) => (
-  <RelativePositionWrapper {...props}>
-    <AbsolutelyPositionedPlayer {...props} />
-    <Overlay {...props} />
-  </RelativePositionWrapper>
-)
+const ResponsiveStyledPlayer = (props = {}) => {
+  return (
+    <RelativePositionWrapper {...props}>
+      <AbsolutelyPositionedPlayer {...props} />
+      <Overlay {...props} />
+    </RelativePositionWrapper>
+  )
+}
 
 export default ResponsiveStyledPlayer

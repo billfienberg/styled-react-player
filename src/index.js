@@ -1,8 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Player from './Player'
+import ResponsiveStyledPlayer from './Player'
+import { StyledCover } from './Cover'
 
-const App = () => {
+const App = text => {
   // https://github.com/CookPete/react-player#props
   const playerProps = {
     playing: true,
@@ -13,14 +14,14 @@ const App = () => {
   }
 
   const overlayProps = {
-    opacity: 0.5,
+    opacity: 0.8,
     overlayColor: 'black',
   }
 
   return (
-    <div>
-      <Player {...playerProps} {...overlayProps} />
-    </div>
+    <ResponsiveStyledPlayer {...playerProps} {...overlayProps}>
+      <StyledCover text="Words" />
+    </ResponsiveStyledPlayer>
   )
 }
 render(<App />, document.getElementById('root'))
